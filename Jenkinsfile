@@ -4,14 +4,14 @@ pipeline {
       terraform 'terraform'
  }
   stages {
-    stage('Terraform Validate') {
-      steps{
-        sh 'terraform validate'
-    }
-   }
     stage('Terraform Init') {
       steps{
         sh 'terraform init'
+    }
+   }
+    stage('Terraform Validate') {
+      steps{
+        sh 'terraform validate'
     } 
    }
     stage('Terraform Plan') {
